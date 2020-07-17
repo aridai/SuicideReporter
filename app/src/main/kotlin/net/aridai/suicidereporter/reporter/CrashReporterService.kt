@@ -19,6 +19,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import net.aridai.suicidereporter.R
+import timber.log.Timber
 import java.io.File
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -63,6 +64,8 @@ internal class CrashReporterService : LifecycleService() {
     private suspend fun saveToFile(stackTrace: String) {
         val fileName = LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_TIME_PATTERN)).let { "$it.log" }
         val file = File(this.applicationContext.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), fileName)
+
+        Timber.i("出力ファイル: ${file.absolutePath}")
 
         withContext(Dispatchers.IO) { file.writeText(stackTrace) }
     }
