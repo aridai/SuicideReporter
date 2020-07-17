@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ListActivity" />
+
+        <activity android:name=".DetailActivity" />
+
         <service
             android:name=".reporter.CrashReporterService"
             android:process=":crash" />

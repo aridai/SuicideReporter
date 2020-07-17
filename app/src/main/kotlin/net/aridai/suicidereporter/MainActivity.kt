@@ -1,5 +1,6 @@
 package net.aridai.suicidereporter
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -18,6 +19,7 @@ internal class MainActivity : AppCompatActivity() {
         this.button1.setOnClickListener { this.suicide1() }
         this.button2.setOnClickListener { this.suicide2() }
         this.button3.setOnClickListener { this.suicide3() }
+        this.button4.setOnClickListener { this.startActivity(Intent(this, ListActivity::class.java)) }
     }
 
     private fun suicide1() {

@@ -3,4 +3,5 @@
     <string name="suicide1">ポックリ逝く自殺</string>
     <string name="suicide2">複雑な自殺</string>
     <string name="suicide3">手の込んだ自殺</string>
+    <string name="to_list_button">レポート一覧へ</string>
 </resources>
